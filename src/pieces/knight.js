@@ -20,5 +20,18 @@ export default class Knight extends Piece{
     getSrcToDestPath(src, dest){
         return [];
     }
+    getPossibleDest(src){
+        let moves = [];
+        moves.push(src + 10);
+        moves.push(src +15);
+        moves.push(src + 17);
+        moves.push(src + 6);
+        moves.push(src -10);
+        moves.push(src -15);
+        moves.push(src -17);
+        moves.push(src -6);
+
+        return moves;
+    }
     
 }
