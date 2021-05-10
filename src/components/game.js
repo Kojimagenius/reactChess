@@ -9,7 +9,10 @@ import initialiseChessBoard from '../helpers/board-initialiser.js';
 export default class Game extends React.Component {
   constructor() {
     super();
+    let date = new Date();
+    date = new Date(date.getTime() + 60000);
     this.state = {
+      currentDate: date.toLocaleTimeString(),
       squares: initialiseChessBoard(),
       whiteFallenSoldiers: [],
       blackFallenSoldiers: [],
@@ -126,6 +129,7 @@ export default class Game extends React.Component {
 
     return (
       <div>
+        <div>{this.state.currentDate}</div>
         <div className="game">
           <div className="game-board">
             <Board
@@ -153,7 +157,7 @@ export default class Game extends React.Component {
         </div>
 
         <div className="icons-attribution">
-         </div>
+        </div>
        
       </div>
 
